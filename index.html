@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Choose Areewan? | GMM Grammy Place 2027</title>
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy-light: #163A63;
+    --gold: #D4AF37;
+    --gold-soft: #F7E9B8;
+    --emerald: #0F6B4E;
+    --teal: #1B7A8C;
+    --slate: #1E293B;
+    --bg: #F4F6F9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+  body { background: #E2E8F0; color: var(--slate); padding: 16px; display: flex; flex-direction: column; align-items: center; }
+
+  .toolbar {
+    width: 100%; max-width: 1240px; display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px; gap: 10px; flex-wrap: wrap;
+  }
+  .toolbar-left { font-size: 13px; color: var(--navy); font-weight: 600; }
+  .btn-group { display: flex; gap: 8px; }
+  button {
+    border: none; border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  button:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-outline { background: #fff; color: var(--navy); border: 1px solid #CBD5E1; }
+
+  /* A3 / A4 Landscape Board */
+  .board {
+    width: 100%; max-width: 1240px; background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 18px 40px rgba(11, 37, 69, .18); border: 1px solid #CBD5E1;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(120deg, var(--navy) 0%, #133B6B 70%, #0D2F59 100%);
+    color: #fff; padding: 18px 24px; display: grid; grid-template-columns: 290px 1fr; gap: 20px; align-items: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  .profile-card {
+    background: linear-gradient(135deg, #F3D98B, #D4AF37); color: var(--navy); border-radius: 10px;
+    padding: 12px 14px; box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  }
+  .profile-card h2 { font-size: 17px; font-weight: 800; letter-spacing: .3px; }
+  .profile-card .thai { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .profile-card .meta { font-size: 11.5px; line-height: 1.35; }
+
+  .title-block h1 { font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .title-block .sub { font-size: 13.5px; color: #CBD5E1; margin-top: 3px; }
+  .tagline {
+    margin-top: 10px; display: inline-block; background: linear-gradient(90deg, #F5DF99, #D4AF37);
+    color: var(--navy); font-weight: 800; font-size: 13px; padding: 6px 16px; border-radius: 999px;
+    letter-spacing: .4px; box-shadow: 0 3px 10px rgba(212,175,55,.35);
+  }
+
+  /* 3 Engines Grid */
+  .engines { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 14px; padding: 16px 20px 12px; background: var(--bg); }
+  .engine-col {
+    background: #fff; border-radius: 10px; border: 1px solid #E2E8F0; overflow: hidden;
+    display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    cursor: pointer;
+  }
+  .engine-col:hover, .engine-col.active {
+    transform: translateY(-3px); box-shadow: 0 10px 24px rgba(11,37,69,.14); border-color: var(--gold);
+  }
+  .eng-head { padding: 10px 14px; color: #fff; }
+  .eng-1 .eng-head { background: linear-gradient(90deg, #0D5C43, #147A59); }
+  .eng-2 .eng-head { background: linear-gradient(90deg, #166275, #22849B); }
+  .eng-3 .eng-head { background: linear-gradient(90deg, #0B2545, #1D4373); }
+  .eng-head h3 { font-size: 13.5px; font-weight: 800; letter-spacing: .3px; }
+  .eng-head p { font-size: 11.5px; opacity: .92; margin-top: 2px; }
+
+  .eng-body { padding: 12px 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .e1-grid { display: grid; grid-template-columns: 135px 1fr; gap: 8px; align-items: center; }
+  .jd-pill {
+    background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; padding: 7px 9px;
+    border-radius: 6px; line-height: 1.25;
+  }
+  .jd-pill.g1 { background: #0F6B4E; }
+  .jd-pill.g2 { background: #145B59; }
+  .jd-pill.g3 { background: #15456B; }
+  .jd-pill.g4 { background: #0B2545; }
+  .e1-point { font-size: 11.5px; line-height: 1.35; border-left: 3px solid var(--emerald); padding-left: 8px; }
+
+  .bullet {
+    font-size: 12px; line-height: 1.4; padding: 7px 10px; background: #F8FAFC;
+    border-left: 3px solid var(--teal); border-radius: 0 6px 6px 0;
+  }
+  .eng-3 .bullet { border-left-color: var(--navy); }
+  .gate-tag {
+    margin-top: auto; font-size: 10.5px; font-weight: 700; color: var(--navy);
+    background: var(--gold-soft); padding: 5px 8px; border-radius: 5px; text-align: center;
+  }
+
+  /* 100-Day Bar */
+  .roadmap { padding: 10px 20px 14px; background: #fff; border-top: 1px solid #E2E8F0; }
+  .roadmap-title { font-size: 13px; font-weight: 800; color: var(--navy); letter-spacing: .4px; margin-bottom: 8px; }
+  .gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .gate-card {
+    border-radius: 8px; border: 1px solid #CBD5E1; overflow: hidden; cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .gate-card:hover, .gate-card.active { transform: translateY(-2px); border-color: var(--gold); }
+  .gate-hd { padding: 6px 12px; font-size: 12px; font-weight: 800; color: #fff; }
+  .g-v .gate-hd { background: #B8860B; }
+  .g-q .gate-hd { background: #1B7A8C; }
+  .g-d .gate-hd { background: var(--navy); }
+  .gate-bd { padding: 8px 12px; font-size: 11.5px; line-height: 1.38; background: #F8FAFC; }
+
+  /* Interactive Detail Drawer */
+  .detail-panel {
+    margin: 0 20px 14px; padding: 12px 16px; border-radius: 8px;
+    background: #F1F5F9; border-left: 5px solid var(--gold); font-size: 12.5px; line-height: 1.48;
+  }
+  .detail-panel strong { color: var(--navy); }
+
+  /* Footer */
+  .footer {
+    background: var(--navy); color: #F8FAFC; text-align: center; padding: 10px 16px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+  }
+  .footer span { color: var(--gold); }
+
+  /* Staggered Reveal Animation */
+  .anim-item { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+  .anim-item.show { opacity: 1; transform: translateY(0); }
+
+  @media print {
+    @page { size: A3 landscape; margin: 8mm; }
+    body { background: #fff; padding: 0; }
+    .toolbar, .detail-panel { display: none !important; }
+    .board { box-shadow: none; border: none; max-width: 100%; }
+    .anim-item { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">Interactive Executive Artifact — Click any Engine or 100-Day Gate to inspect evidence</div>
+  <div class="btn-group">
+    <button class="btn-gold" onclick="replayAnimation()">▶ Replay Animation</button>
+    <button class="btn-primary" onclick="window.print()">🖨 Print / Export A3–A4 PDF</button>
+  </div>
+</div>
+
+<div class="board">
+  <div class="header anim-item" data-step="0">
+    <div class="profile-card">
+      <h2>AREEWAN CHUKAEW</h2>
+      <div class="thai">(อารีวรรณ ชูแก้ว)</div>
+      <div class="meta">
+        Candidate: <strong>Head of Property Management</strong><br/>
+        areewanbiz@gmail.com • +66 81 100 5757
+      </div>
+    </div>
+    <div class="title-block">
+      <h1>WHY CHOOSE ME? / WHY HIRE AREEWAN?</h1>
+      <div class="sub">Head of Property Management | GMM Grammy Place (2027) Strategic Role Alignment</div>
+      <div class="tagline">NOT ONLY ENGINE 1 (CORE BUILDING), BUT ALSO THE 2nd &amp; 3rd ENGINES!</div>
+    </div>
+  </div>
+
+  <div class="engines">
+    <!-- ENGINE 1 -->
+    <div class="engine-col eng-1 anim-item" data-step="1" onclick="showDetail('e1', this)">
+      <div class="eng-head">
+        <h3>ENGINE 1: THE FOUNDATIONAL CORE</h3>
+        <p>GMM Grammy Place (~49,000 sq.m. gross • 43 Storeys)</p>
+      </div>
+      <div class="eng-body">
+        <div class="e1-grid">
+          <div class="jd-pill g1">1. Commercial Leasing</div>
+          <div class="e1-point"><strong>14+ Yrs Real Estate BD &amp; Sales</strong> (Savills AD, MQDC SM, Ananda Manager)</div>
+        </div>
+        <div class="e1-grid">
+          <div class="jd-pill g2">2. Tenant &amp; Property Mgmt</div>
+          <div class="e1-point"><strong>8X% → 9X% Occupancy Plan</strong>, NER Underwriting &amp; 5-Lease Intra-Group Renewal</div>
+        </div>
+        <div class="e1-grid">
+          <div class="jd-pill g3">3. Building Operations</div>
+          <div class="e1-point"><strong>Daily Floor Walkrounds (MBWA)</strong> &amp; 24/7 HVAC / Ror.1–Bor.1 Statutory SOPs</div>
+        </div>
+        <div class="e1-grid">
+          <div class="jd-pill g4">4. Team &amp; Process</div>
+          <div class="e1-point"><strong>Monthly Vendor SLA Scorecards</strong>, 4-Tier Helpdesk &amp; Zero-Based OPEX</div>
+        </div>
+        <div class="gate-tag">Immediate Mandate • Covers 13/13 Advertised JD Duties</div>
+      </div>
+    </div>
+
+    <!-- ENGINE 2 -->
+    <div class="engine-col eng-2 anim-item" data-step="2" onclick="showDetail('e2', this)">
+      <div class="eng-head">
+        <h3>ENGINE 2: ADJACENT OPPORTUNITIES</h3>
+        <p>Provincial Resorts, Retreats &amp; Land (Geurt Fah-Led)</p>
+      </div>
+      <div class="eng-body">
+        <div class="bullet">Assess &amp; activate <strong>Khao Yai &amp; Chiang Mai</strong> luxury leisure, wellness &amp; midweek creator retreats</div>
+        <div class="bullet">Evaluate <strong>Sukhumvit Soi 38</strong> land ground-lease, modular lifestyle or interim monetisation</div>
+        <div class="bullet">Partner &amp; operator onboarding with high-touch guest-journey optimisation</div>
+        <div class="bullet">Proven luxury/branded hospitality track record (<strong>Six Senses, MQDC, Raimon Land</strong>) &amp; UHNW asset stewardship</div>
+        <div class="gate-tag">Year 1 Diligence (2027) → Year 2 Gated Pilots (2028)</div>
+      </div>
+    </div>
+
+    <!-- ENGINE 3 -->
+    <div class="engine-col eng-3 anim-item" data-step="3" onclick="showDetail('e3', this)">
+      <div class="eng-head">
+        <h3>ENGINE 3: ASSET-LIGHT FEE-SERVICES</h3>
+        <p>External Third-Party Mandates (Scalable New S-Curve)</p>
+      </div>
+      <div class="eng-body">
+        <div class="bullet">Launch fee-based <strong>outsourced leasing, asset management &amp; commercial diagnostics</strong></div>
+        <div class="bullet">Formulate B2B partner ecosystems, concierge coordination &amp; commercialisation models</div>
+        <div class="bullet">Pilot with <strong>one paying external owner</strong> using APAC MNC governance standards (<strong>P&amp;G &amp; Microsoft, Singapore</strong>)</div>
+        <div class="gate-tag">Exploratory • Ring-Fenced P&amp;L • Zero Core Diversion</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmap anim-item" data-step="4">
+    <div class="roadmap-title">FIRST 100-DAY DELIVERABLES &amp; CONTRACT GATES (2027)</div>
+    <div class="gates">
+      <div class="gate-card g-v" onclick="showDetail('d30', this)">
+        <div class="gate-hd">DAYS 1–30: VERIFY (GATE 1)</div>
+        <div class="gate-bd">Listen &amp; walk the floor daily; reconcile rent roll &amp; NLA; audit statutory certificates (Ror.1/Bor.1); baseline OPEX &amp; resolve Q1–Q7 conflicts.</div>
+      </div>
+      <div class="gate-card g-q" onclick="showDetail('d60', this)">
+        <div class="gate-hd">DAYS 31–60: QUALIFY (GATE 2)</div>
+        <div class="gate-bd">Publish one landlord-approved stock sheet; launch 5-gate CRM pipeline; align 30 Apr 2027 GRAMMY intra-group renewal footprint &amp; arm's-length pricing.</div>
+      </div>
+      <div class="gate-card g-d" onclick="showDetail('d100', this)">
+        <div class="gate-hd">DAYS 61–100: DELIVER (GATE 3)</div>
+        <div class="gate-bd">Present downside-tested fitted-suite &amp; retail cases (NER/NOI); deploy monthly vendor SLA scorecards; set 12–18 mo retention triggers &amp; 2028 budget path.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-panel" id="detailBox">
+    <strong>Interactive Evidence Brief:</strong> Click any Growth Engine or 100-Day Gate card above to inspect quantified metrics, governance gates, and career credentials backing each pillar.
+  </div>
+
+  <div class="footer anim-item" data-step="5">
+    <span>Core Capabilities:</span> 20+ Years Multidisciplinary Leader • High-End Commercial BD &amp; Sales • APAC MNC Governance • Related-Party &amp; Daily Floor Stewardship
+  </div>
+</div>
+
+<script>
+const DETAILS = {
+  e1: "<strong>Engine 1 Proof (Core Tower):</strong> Maps directly to all 13 advertised Head of Property Management duties. Protects 5 disclosed SET intra-group leases (THB 30.71M/mo Year-2 stepping to THB 31.48M/mo final-period) including the 30 Apr 2027 GRAMMY renewal (17,137.33 sq.m.). Moves occupancy from 8X% toward 9X% (+1% ≈ 385 sq.m. ≈ THB 3.2–3.6M/yr) governed strictly by 36-month NER, daily floor walkrounds (MBWA), Thai statutory safety compliance (B.E. 2548/2555/2558), and vendor SLA fee-abatement scorecards.",
+  e2: "<strong>Engine 2 Proof (Adjacent Portfolio):</strong> Ring-fenced from core tower NOI. Year 1 focuses on title, legal mandate, hotel/residential licensing, and private-use calendar verification for Khao Yai, Chiang Mai, and Sukhumvit Soi 38. Leverages direct experience across luxury branded residences (Six Senses The Forestias, Mandarin Oriental Residences at MQDC; Raimon Land) and confidential UHNW private property/asset stewardship.",
+  e3: "<strong>Engine 3 Proof (Asset-Light Fee Services):</strong> Turns core building intelligence, leasing SOPs, and tenant-mix diagnostics into third-party advisory/management fees. Scales strictly after one signed, paying external pilot proves positive net margin with zero diversion from GMM Grammy Place—backed by regional partner/governance discipline built at Kristina Zanic (APAC BD), Procter & Gamble (Singapore), and Microsoft (Singapore).",
+  d30: "<strong>Days 1–30 (Listen, Walk & Verify):</strong> Respectful handover with long-serving staff; daily site walkrounds across lobbies, plant rooms, parking, B2 retail, and Level 2 GEMM HOUSE/GMMTV SHOP queues. Closes all 7 mandatory baselines (rent roll, certified NLA, lease abstracts, statutory certificates, OPEX) and Quick Wins Q1–Q7 (resolving Units 1206/1210/1810/JBM portal discrepancies).",
+  d60: "<strong>Days 31–60 (Qualify & Test):</strong> Prepares viewing-ready packs for the 5 large advertised suites (2,134.16 sq.m. = 5.5 occupancy points) first, advances arm's-length renewal terms for 30 Apr 2027 (benchmarked against JLL appraised THB 870/sq.m.), and completes MEP/NER feasibility on conditional repositioning options (Charter, Cubic, B202 pre-loved luxury, NGEEP/Rest Suite) vs. conventional office fallback.",
+  d100: "<strong>Days 61–100 (Deliver & Institutionalise):</strong> Submits downside-tested CAPEX/pilot business cases through established reporting lines (zero bypass), launches monthly outsourced vendor SLA audits (security, cleaning, M&E, lifts), enforces 4-tier helpdesk SLAs (P1 ≤15 min), and builds repeatable SOPs and team coaching for long-term succession."
+};
+
+function showDetail(key, el) {
+  document.querySelectorAll('.engine-col, .gate-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('detailBox').innerHTML = DETAILS[key];
+}
+
+function replayAnimation() {
+  const items = document.querySelectorAll('.anim-item');
+  items.forEach(el => el.classList.remove('show'));
+  items.forEach(el => {
+    const step = parseInt(el.dataset.step, 10);
+    setTimeout(() => el.classList.add('show'), 180 + step * 520);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', replayAnimation);
+</script>
+</body>
+</html>
